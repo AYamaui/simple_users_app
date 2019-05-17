@@ -6,10 +6,7 @@ import {UserListComponent} from "../user-list/user-list.component";
 import {RouterTestingModule} from "@angular/router/testing";
 import {BrowserModule, By} from "@angular/platform-browser";
 import {NgxPaginationModule} from "ngx-pagination";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {SearchService} from "../../../../../../Cloudera/github-search/src/app/services/search/search.service";
-import {HttpTestingController} from "@angular/common/http/testing";
-import {Issue} from "../../../../../../Cloudera/github-search/src/app/models/issue/issue";
+import {HttpClientModule} from "@angular/common/http";
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -23,8 +20,7 @@ describe('UserComponent', () => {
         BrowserModule,
         NgxPaginationModule,
         HttpClientModule
-      ],
-      providers: [ SearchService, HttpTestingController, HttpClient ]
+      ]
     })
     .compileComponents();
   }));

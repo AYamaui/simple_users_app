@@ -32,6 +32,7 @@ export class UserListComponent implements OnInit {
     } else {
       this.page = page;
     }
+
     this.dataService.getUsers(this.page).subscribe(
       ([users, totalPages]) => {
 

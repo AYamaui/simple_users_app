@@ -1,15 +1,8 @@
 import {async, TestBed} from '@angular/core/testing';
 
 import { DataServiceService } from './data-service.service';
-import {SearchService} from "../../../../../../Cloudera/github-search/src/app/services/search/search.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import {UserComponent} from "../../components/user/user.component";
-import {UserListComponent} from "../../components/user-list/user-list.component";
-import {UserDetailComponent} from "../../components/user-detail/user-detail.component";
-import {BrowserModule} from "@angular/platform-browser";
-import {AppRoutingModule} from "../../app-routing.module";
-import {NgxPaginationModule} from "ngx-pagination";
 
 describe('DataServiceService', () => {
 
@@ -19,7 +12,7 @@ describe('DataServiceService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ SearchService, HttpTestingController, HttpClient ],
+      providers: [ DataServiceService, HttpTestingController, HttpClient ],
       imports: [
         HttpClientTestingModule,
         HttpClientModule
