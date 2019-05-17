@@ -1,0 +1,30 @@
+<div class="container text-center" *ngIf="user">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class="row pull-left pl-lg-3 pb-5">
+        <button type="button" class="btn btn-primary pull-left" [routerLink]="['']"> Go Back </button>
+      </div>
+      <div class="jumbotron basic-info-container border rounded-0">
+        <div class="row">
+          <div class="col-sm-8">
+            <h2 class="pb-4">
+              {{ user.firstName }}
+              {{ user.lastName }}
+            </h2>
+            <div class="text-left">
+              <strong class="text-sm-left">Email</strong>: {{ user.email }}
+            </div>
+            <div class="text-left">
+              <strong class="text-sm-left">Id</strong>: {{ user.id }}
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <img src="{{ user.avatarImage }}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

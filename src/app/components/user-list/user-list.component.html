@@ -1,0 +1,35 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div *ngFor="let user of users | paginate: { itemsPerPage: usersPerPage, currentPage: page }">
+      <!--<div *ngFor="let user of users">-->
+        <app-user [firstName]="user.firstName" [lastName]="user.lastName" [avatarImage]="user.avatarImage" [id]="user.id"></app-user>
+      </div>
+      <div *ngIf="users && users.length > 0">
+        <!--<pagination-controls (pageChange)="page = $event" autoHide="false" maxSize="10"></pagination-controls>-->
+
+        <nav>
+          <ul class="pagination">
+            <li [ngClass]="{ disabled:page === 1 }" class="page-item">
+                <a (click)="setPage(1)" class="page-link" href="#">First</a>
+            </li>
+            <li [ngClass]="{ disabled: page === 1 }" class="page-item">
+                <a (click)="setPage(page - 1)" class="page-link" href="#">Previous</a>
+            </li>
+            <li *ngFor="let page_ of pages" [ngClass]="{active:page === page_}" class="page-item">
+                <a (click)="getUsers(page_)" class="page-link" href="#">{{page_}}</a>
+            </li>
+            <li class="page-item" [ngClass]="{ disabled: page === totalPages }">
+                <a (click)="getUsers()" class="page-link" href="#">Next</a>
+            </li>
+            <li [ngClass]="{ disabled: page === totalPages }" class="page-item">
+                <a (click)="setPage(totalPages)" class="page-link" href="#">Last</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
