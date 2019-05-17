@@ -6,7 +6,7 @@ import {UserDetailComponent} from "../user-detail/user-detail.component";
 import {RouterTestingModule} from "@angular/router/testing";
 import {BrowserModule, By} from "@angular/platform-browser";
 import {NgxPaginationModule} from "ngx-pagination";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {of} from "rxjs";
 import {User} from "../../models/user";
 import {DataServiceService} from "../../services/data/data-service.service";
@@ -58,7 +58,7 @@ describe('UserListComponent', () => {
 
 
   it('should receive the information of the users from DataService', () => {
-    spyOn(component, 'getUsers');
+    spyOn(component, 'getUsers').and.callThrough();
     component.ngOnInit();
 
     expect(component.getUsers).toHaveBeenCalled();
