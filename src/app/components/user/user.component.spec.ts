@@ -49,5 +49,7 @@ describe('UserComponent', () => {
 
     expect(fixture.debugElement.query(By.css('.navbar h3')).nativeElement.innerText).toEqual('firstName lastName');
     expect(fixture.debugElement.query(By.css('img')).nativeElement.getAttribute('src')).toEqual('avatarImage');
+    expect(fixture.debugElement.query(By.css('a')).nativeElement.getAttribute('href')).toEqual('/users/1');
   });
+  
 });
